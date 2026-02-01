@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}DinoNews{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="{% url 'inicio' %}" class="navbar-logo">
+                🦕 DinoNews
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="{% url 'inicio' %}" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'formulario' %}" class="nav-link">Formulario</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'noticias' %}" class="nav-link">Noticias</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/admin/" class="nav-link nav-link-admin">🔧 Admin</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="container">
+        {% block contenido %}{% endblock %}
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <p>&copy; 2026 DinoNews - Portal de Noticias sobre Dinosaurios. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

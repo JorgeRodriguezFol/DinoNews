@@ -1,0 +1,69 @@
+{% extends 'noticias/base.html' %}
+
+{% block titulo %}Inicio - DinoNews{% endblock %}
+
+{% block contenido %}
+    <h1>Bienvenido a DinoNews</h1>
+    
+    <!-- Sección introductoria con párrafos -->
+    <section class="intro-section">
+        <p>
+            DinoNews es el portal líder en noticias y descubrimientos sobre dinosaurios. Nos dedicamos a traerte 
+            las historias más fascinantes sobre estas criaturas extraordinarias que dominaron nuestro planeta hace 
+            millones de años. Desde nuevos descubrimientos arqueológicos hasta investigaciones científicas de vanguardia, 
+            aquí encontrarás toda la información que necesitas.
+        </p>
+        
+        <p>
+            Los dinosaurios son seres que han cautivado la imaginación humana durante generaciones. Estos reptiles 
+            antiguos, algunos del tamaño de edificios, otros pequeños como pájaros, nos muestran la increíble diversidad 
+            de la vida en la Tierra hace 66 millones de años. En DinoNews, nos esforzamos por mantener actualizado el 
+            conocimiento sobre estos animales fascinantes.
+        </p>
+        
+        <p>
+            Te invitamos a explorar nuestro sitio, leer noticias emocionantes, y si tienes información sobre nuevos 
+            descubrimientos o estudios, puedes compartirlos a través de nuestro formulario. ¡Únete a nuestra comunidad 
+            de entusiastas de la paleontología!
+        </p>
+    </section>
+
+    <!-- Sección con imágenes -->
+    <section class="images-section">
+        <h2>Galería de Dinosaurios</h2>
+        <div class="images-gallery">
+            <div class="image-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Tyrannosaurus_Rex_Holotype.jpg" alt="Tyrannosaurus Rex">
+                <p>Tyrannosaurus Rex - El rey de los dinosaurios</p>
+            </div>
+            <div class="image-item">
+                <img src="https://via.placeholder.com/300x200?text=Triceratops" alt="Triceratops">
+                <p>Triceratops - El dinosaurio de tres cuernos</p>
+            </div>
+            <div class="image-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Berlin_Naturkundemuseum_Brachiosaurus_henningsphoto_de.jpg" alt="Brachiosaurus">
+                <p>Brachiosaurus - El coloso de cuello largo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elemento HTML adicional: Lista de datos interesantes -->
+    <section class="interesting-facts">
+        <h2>Datos Interesantes sobre Dinosaurios</h2>
+        <ul class="facts-list">
+            <li><strong>Período más largo:</strong> Los dinosaurios dominaron la Tierra durante aproximadamente 165 millones de años.</li>
+            <li><strong>Tamaño variable:</strong> Algunos dinosaurios eran tan pequeños como pollos, mientras que otros alcanzaban los 35 metros de largo.</li>
+            <li><strong>Descendientes modernos:</strong> Las aves son consideradas los últimos dinosaurios vivos.</li>
+            <li><strong>Extinción del Cretácico:</strong> Un evento de extinción masiva hace 66 millones de años eliminó a la mayoría de los dinosaurios.</li>
+            <li><strong>Descubrimientos continuos:</strong> Los científicos descubren nuevas especies de dinosaurios casi cada semana.</li>
+        </ul>
+    </section>
+
+    <!-- Sección adicional: Cita destacada -->
+    <section class="quote-section">
+        <blockquote class="featured-quote">
+            <p>"Los dinosaurios no desaparecieron, simplemente evolucionaron y ahora vuelan en nuestros cielos."</p>
+            <footer>- Paleontólogo anónimo</footer>
+        </blockquote>
+    </section>
+{% endblock %}

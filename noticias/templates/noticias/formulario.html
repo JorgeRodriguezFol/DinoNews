@@ -1,0 +1,93 @@
+{% extends 'noticias/base.html' %}
+
+{% block titulo %}Formulario - DinoNews{% endblock %}
+
+{% block contenido %}
+    <h1>Proponer una Noticia</h1>
+    
+    <section class="form-section">
+        <p class="form-intro">
+            ¿Tienes una noticia emocionante sobre dinosaurios que quieres compartir? 
+            Completa el siguiente formulario y nos aseguraremos de revisar tu propuesta.
+        </p>
+
+        <!-- Formulario HTML con múltiples elementos distintos -->
+        <form method="POST" class="noticias-form">
+            {% csrf_token %}
+            
+            <!-- Campo de texto para el título -->
+            <div class="form-group">
+                <label for="titulo">Título de la Noticia</label>
+                <input 
+                    type="text" 
+                    id="titulo" 
+                    name="titulo" 
+                    maxlength="200"
+                    placeholder="Ej: Descubrimiento de fósil de dinosaurio en Argentina"
+                    required
+                >
+                <small>Máximo 200 caracteres</small>
+            </div>
+
+            <!-- Campo de fecha -->
+            <div class="form-group">
+                <label for="fecha">Fecha del Descubrimiento</label>
+                <input 
+                    type="date" 
+                    id="fecha" 
+                    name="fecha"
+                    required
+                >
+            </div>
+
+            <!-- Campo de área de texto para el contenido -->
+            <div class="form-group">
+                <label for="contenido">Contenido de la Noticia</label>
+                <textarea 
+                    id="contenido" 
+                    name="contenido" 
+                    rows="8"
+                    placeholder="Describe la noticia en detalle. Incluye información sobre el descubrimiento, su importancia y detalles relevantes."
+                    required
+                ></textarea>
+                <small>Proporciona una descripción completa de la noticia</small>
+            </div>
+
+            <!-- Campo de selección (select) -->
+            <div class="form-group">
+                <label for="categoria">Categoría de la Noticia</label>
+                <select id="categoria" name="categoria" required>
+                    <option value="">Selecciona una categoría</option>
+                    <option value="descubrimiento">Descubrimiento</option>
+                    <option value="investigacion">Investigación</option>
+                    <option value="evento">Evento</option>
+                    <option value="documental">Documental</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+
+            <!-- Campo de checkboxes -->
+            <div class="form-group">
+                <label>¿Es una noticia confiable?</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="confiable" value="si">
+                        Sí, proviene de una fuente confiable
+                    </label>
+                </div>
+            </div>
+
+            <!-- Botón de envío -->
+            <div class="form-group">
+                <button type="submit" class="btn-submit">Enviar Propuesta</button>
+                <button type="reset" class="btn-reset">Limpiar Formulario</button>
+            </div>
+        </form>
+
+        <!-- Nota importante -->
+        <div class="form-note">
+            <strong>Nota:</strong> Todas las propuestas serán revisadas por nuestro equipo antes de ser publicadas. 
+            Nos reservamos el derecho de editar o rechazar propuestas que no cumplan con nuestros estándares de calidad.
+        </div>
+    </section>
+{% endblock %}

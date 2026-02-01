@@ -1,0 +1,37 @@
+{% extends 'noticias/base.html' %}
+
+{% block titulo %}Noticias - DinoNews{% endblock %}
+
+{% block contenido %}
+    <h1>Noticias Recientes</h1>
+    
+    <!-- Listado dinámico de noticias desde la base de datos -->
+    <section class="noticias-section">
+        {% if noticias %}
+            <p class="noticias-count">Se encontraron {{ noticias.count }} noticia{{ noticias.count|pluralize }}.</p>
+            <div class="noticias-list">
+                {% for noticia in noticias %}
+                    <article class="noticia-item">
+                        <div class="noticia-header">
+                            <h2 class="noticia-titulo">{{ noticia.titulo }}</h2>
+                            <span class="noticia-fecha">
+                                📅 {{ noticia.fecha_publicacion|date:"d \d\e F \d\e Y" }}
+                            </span>
+                        </div>
+                        <div class="noticia-contenido">
+                            <p>{{ noticia.texto|truncatewords:50 }}</p>
+                            <a href="#" class="leer-mas">Leer más...</a>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="no-noticias">
+                <p>No hay noticias disponibles en este momento.</p>
+                <p>Por favor, vuelve más tarde o propón una nueva noticia a través de nuestro 
+                   <a href="{% url 'formulario' %}">formulario</a>.
+                </p>
+            </div>
+        {% endif %}
+    </section>
+{% endblock %}
