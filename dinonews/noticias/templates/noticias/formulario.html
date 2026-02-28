@@ -1,0 +1,18 @@
+{% extends 'noticias/base.html' %}
+
+{% block content %}
+<h1>Formulario</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="titulo">Título:</label><br>
+    <input type="text" id="titulo" name="titulo"><br><br>
+
+    <label for="fecha">Fecha de publicación:</label><br>
+    <input type="date" id="fecha" name="fecha"><br><br>
+
+    <label for="texto">Texto de la noticia:</label><br>
+    <textarea id="texto" name="texto" rows="4" cols="50"></textarea><br><br>
+
+    <input type="submit" value="Enviar">
+</form>
+{% endblock %}

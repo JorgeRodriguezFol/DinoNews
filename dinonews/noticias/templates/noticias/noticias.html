@@ -1,0 +1,18 @@
+{% extends 'noticias/base.html' %}
+
+{% block content %}
+<h1>Noticias</h1>
+{% if noticias %}
+    <ul>
+    {% for noticia in noticias %}
+        <li>
+            <h2>{{ noticia.titulo }}</h2>
+            <p><em>{{ noticia.fecha_publicacion }}</em></p>
+            <p>{{ noticia.texto }}</p>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay noticias publicadas aún.</p>
+{% endif %}
+{% endblock %}

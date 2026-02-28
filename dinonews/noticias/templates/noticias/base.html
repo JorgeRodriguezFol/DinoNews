@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>DinoNews</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="{% url 'inicio' %}">Inicio</a> |
+        <a href="{% url 'formulario' %}">Formulario</a> |
+        <a href="{% url 'noticias' %}">Noticias</a> |
+        <a href="{% url 'admin:index' %}">Admin</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
